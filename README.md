@@ -1,0 +1,4 @@
+- prepare: `cargo install wasm-pack`
+- build webasm:  `wasm-pack build --target web`
+- `cd /site && npm install && npm run serve`
+- open browser `http://localhost:8080/`
