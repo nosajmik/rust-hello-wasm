@@ -5,6 +5,15 @@
     <title>hello-wasm example</title>
   </head>
   <body>
-    <script src="./index.js" type="module"></script>
+    <script type="module">
+      import init, {greet} from "../pkg/hello_wasm.js";
+
+      (async _ => {
+        window.wasm = await init();
+        greet('Oh hi!');
+        window.init = init;
+        window.greet = greet;
+      })()
+    </script>
   </body>
 </html>
